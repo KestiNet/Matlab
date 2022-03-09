@@ -1,0 +1,23 @@
+x0 = -55;
+y0 = 6;
+
+x = linspace(x0,y0);
+y = 3.*x + 2;
+
+a = 3;
+b = -1;
+c = 2;
+x = linspace(x0,y0);
+
+digitsOld = digits(50);
+xi = vpa(b*(b*x0 - a*y0) - a*c) / (a.^2 + b.^2);
+yi = vpa(a*(-b*x0 + a*y0) - b*c) / (a.^2 + b.^2);
+digits(digitsOld);
+
+figure
+plot(x,y);
+hold on
+plot([x0 xi], [y0 yi], '-or', 'MarkerFaceColor','r')
+hold off
+grid
+axis auto
